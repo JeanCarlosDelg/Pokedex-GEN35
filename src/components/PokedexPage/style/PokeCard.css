@@ -1,0 +1,330 @@
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 1em;
+    transition: all 0.3s ease-in-out;
+    z-index: 0;
+
+    &:hover {
+      transform: scale(1.05);
+      transition-duration: 200ms;
+      z-index: 0;
+      cursor: pointer;
+
+      .card__img {
+        margin-top: -1.1em;
+        transform: scale(1.15);
+        transition-duration: 300ms;
+        filter: drop-shadow(1px 3px 0 black);
+      }
+    }
+}
+
+.card__header {
+    width: 100%;
+    aspect-ratio: 2;
+    position: relative;
+    border-radius: 0.3em;
+}
+
+.card__img {
+    position: absolute;
+    width: 55%;
+    top: 2em;
+    left: 25%;
+    transition: all 0.3s ease-in-out;
+}
+
+.card__principal {
+    margin-top: 3.5em;
+}
+
+.card__name {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.2em;
+}
+
+.card__types {
+  font-size: 1.2em;
+  --gap-types: 0.7em;
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-types);
+  text-transform: capitalize;
+}
+
+.card__type:not(:nth-child(1))::before {
+    content: '/';
+    padding-right: var(--gap-types);
+}
+
+.card__h6 {
+  text-align: center;
+  margin: 0;
+  color: #8f8e8ea8;
+  font-size: 0.9em;
+}
+
+.card__hr {
+  margin-top: 1em;
+  margin-bottom: 1.3em;
+  margin-inline: 2em;
+}
+
+.card__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card__stat {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  margin: auto;
+  padding-bottom: 1em;
+}
+
+.card__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  margin-bottom: 0.4em;
+}
+
+.card__value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+/* ?POR TIPOS */
+
+.color-fire {
+  background: linear-gradient(#ff7402, #fca259b7);
+}
+.color-grass {
+  background: linear-gradient(#81b633, #9acc50b7);
+}
+.color-steel {
+  background: linear-gradient(#8ab3b4, #9eb7b8b7);
+}
+.color-water {
+  background: linear-gradient(#2073aa, #4592c4b7);
+}
+.color-psychic {
+  background: linear-gradient(#e741a2, #f366b9b7);
+}
+.color-ground {
+  background: linear-gradient(#ad952a, #ab9842b7);
+}
+.color-ice {
+  background: linear-gradient(#2a91b1, #51c4e7b7);
+}
+.color-flying {
+  background: linear-gradient(#3dc7ef, #21afd6b7);
+}
+.color-ghost {
+  background: linear-gradient(#323f47, #4d5b64b7);
+}
+.color-normal {
+  background: linear-gradient(#889194, #a4acafb7);
+}
+.color-poison {
+  background: linear-gradient(#640147, #7e0058b7);
+}
+.color-rock {
+  background: linear-gradient(#917912, #a38c21b7);
+}
+.color-fighting {
+  background: linear-gradient(#ac4e14, #d56723b7);
+}
+.color-dark {
+  background: linear-gradient(#535151, #707070b7);
+}
+.color-bug {
+  background: linear-gradient(#54792b, #729f3fb7);
+}
+.color-dragon {
+  background: linear-gradient(#53a4cf, #f16e57);
+}
+.color-electric {
+  background: linear-gradient(#968703, #bba909b7);
+}
+.color-fairy {
+  background: linear-gradient(#ca6cae, #fdb9e9b7);
+}
+.color-shadow {
+  background: linear-gradient(#5d4388, #7b62a3b7);
+}
+.color-unknow {
+  background: linear-gradient(#5f5b5b, #757575b7);
+}
+
+/* ? POR COLORES CARD */
+
+.bg-green {
+  color: #34947e;
+}
+.bg-red {
+  color: #c21d1a;
+}
+.bg-blue {
+  color: #4676a0;
+}
+.bg-yellow {
+  color: #caa954;
+}
+.bg-brown {
+  color: #544726c8;
+}
+.bg-purple {
+  color: #6243aa;
+}
+.bg-black {
+  color: #111;
+}
+.bg-pink {
+  color: #be4481;
+}
+.bg-gray {
+  color: #979494;
+}
+.bg-white {
+  color: #bd9999;
+}
+.bg-all {
+  color: #999;
+}
+
+
+/* Bordes  */
+
+.border-fire {
+  border: 0.7em solid #ff7402;
+}
+.border-grass {
+  border: 0.7em solid #9bcc50;
+}
+.border-steel {
+  border: 0.7em solid #9eb7b8;
+}
+.border-water {
+  border: 0.7em solid #4592c4;
+}
+.border-psychic {
+  border: 0.7em solid #f366b9;
+}
+.border-ground {
+  border: 0.7em solid #ab9842;
+}
+.border-ice {
+  border: 0.7em solid #51c4e7;
+}
+.border-flying {
+  border: 0.7em solid #3dc7ef;
+}
+.border-ghost {
+  border: 0.7em solid #4d5b64;
+}
+.border-normal {
+  border: 0.7em solid #a4acaf;
+}
+.border-poison {
+  border: 0.7em solid #7e0058;
+}
+.border-rock {
+  border: 0.7em solid #a38c21;
+}
+.border-fighting {
+  border: 0.7em solid #d56723;
+}
+.border-dark {
+  border: 0.7em solid #707070;
+}
+.border-bug {
+  border: 0.7em solid #729f3f;
+}
+.border-dragon {
+  border: 0.7em solid #f16e57;
+}
+.border-electric {
+  border: 0.7em solid #bba909;
+}
+.border-fairy {
+  border: 0.7em solid #fdb9e9;
+}
+.border-shadow {
+  border: 0.7em solid #7b62a3;
+}
+.border-unknow {
+  border: 0.7em solid #757575;
+}
+
+/* solo hr  */
+
+.border_hr-fire {
+  border: 0.1em solid #ff7402;
+}
+.border_hr-grass {
+  border: 0.1em solid #9bcc50;
+}
+.border_hr-steel {
+  border: 0.1em solid #9eb7b8;
+}
+.border_hr-water {
+  border: 0.1em solid #4592c4;
+}
+.border_hr-psychic {
+  border: 0.1em solid #f366b9;
+}
+.border_hr-ground {
+  border: 0.1em solid #ab9842;
+}
+.border_hr-ice {
+  border: 0.1em solid #51c4e7;
+}
+.border_hr-flying {
+  border: 0.1em solid #3dc7ef;
+}
+.border_hr-ghost {
+  border: 0.1em solid #4d5b64;
+}
+.border_hr-normal {
+  border: 0.1em solid #a4acaf;
+}
+.border_hr-poison {
+  border: 0.1em solid #7e0058;
+}
+.border_hr-rock {
+  border: 0.1em solid #a38c21;
+}
+.border_hr-fighting {
+  border: 0.1em solid #d56723;
+}
+.border_hr-dark {
+  border: 0.1em solid #707070;
+}
+.border_hr-bug {
+  border: 0.1em solid #729f3f;
+}
+.border_hr-dragon {
+  border: 0.1em solid #53a4cf;
+}
+.border_hr-electric {
+  border: 0.1em solid #bba909;
+}
+.border_hr-fairy {
+  border: 0.1em solid #fdb9e9;
+}
+.border_hr-shadow {
+  border: 0.1em solid #7b62a3;
+}
+.border_hr-unknow {
+  border: 0.1em solid #757575;
+}

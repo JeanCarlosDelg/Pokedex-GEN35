@@ -1,0 +1,298 @@
+.pokeDet__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #00000013;
+}
+
+.pokeDet__subcontainer1 {
+    position: relative;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 15em;
+    width: 70%;
+    height: 100%;
+    min-height: 44em;
+    background-color: aliceblue;
+    margin-bottom: 4em;
+}
+
+.pokeDet__img-container {
+    width: 100%;
+    min-height: 9.5em;
+    margin-top: 0;
+}
+
+.pokeDet__img {
+    position: absolute;
+    top: -8em;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 100%;
+    max-width: 18em;
+}
+
+.pokedet__id {
+    text-align: center;
+    font-size: 1.8em;
+    margin-top: 0.5em;
+}
+
+.pokeDet__name-container {
+    display: flex;
+    justify-content: center;
+    font-size: 1.6em;
+}
+
+.hr__name {
+    width: 18em;
+    margin: auto 1.8em;
+    height: 1px;
+    background-color: #424242;
+}
+
+.pokeDet__name {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.pokeDet__datos {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pokeDet__dato {
+    margin-top: 0.5em;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.pokeDet__label-dato {
+    color: rgba(0, 0, 0, 0.548);
+    font-weight: 600;
+}
+
+.pokeDet__value-dato {
+    margin: 0.5em;
+    margin-bottom: 1.2em;
+}
+
+.subtypes_container {
+    width: 350px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.types__value {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-transform: capitalize;
+}
+
+.types_container {
+    display: flex;
+    justify-content: space-around;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.types_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #424242;
+    border-radius: 4px;
+    margin-top: 0.5em;
+    padding: 0.2em 1em;
+    height: 1.5em;
+    line-height: 17px;
+    width: 7.2em;
+    color: white;
+}
+
+.types_info2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #424242;
+    border-radius: 4px;
+    margin-top: 0.5em;
+    height: 1.5em;
+    line-height: 17px;
+    width: 7.2em;
+}
+
+.pokeDet__stats-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.pokeDet__stats {
+    margin: 0 1.5em;
+}
+
+.stat__name {
+    margin: 1em 0;
+    font-size: 1.5em;
+    margin-left: 0.7em;
+}
+
+.stat__cont-name {
+    display: flex;
+    margin-top: 1em;
+}
+
+.stat__hr {
+    width: 50em;
+    margin: auto 3em;
+    margin-right: 0;
+    height: 1px;
+    background-color: #424242;
+}
+
+.movi__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.movi__subcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 1.5em;
+    margin-bottom: 1em;
+}
+
+.movi__info {
+    border: 1px solid #abb6c0;
+    border-radius: 20px;
+    padding: 0.2em 1em;
+    margin: 0.5em;
+    background-color: #d4d7da;
+}
+
+.pokedexBall__hr {
+    width: 100%;
+    max-width: 9.4em;
+    height: 4.7em;
+    opacity: 75%;
+}
+
+.colorDet-fire {
+    color: #ff7402;
+}
+
+.colorDet-grass {
+    color: #9bcc50;
+}
+
+.colorDet-steel {
+    color: #9eb7b8;
+}
+
+.colorDet-water {
+    color: #4592c4;
+}
+
+.colorDet-psychic {
+    color: #f366b9;
+}
+
+.colorDet-ground {
+    color: #ab9842;
+}
+
+.colorDet-ice {
+    color: #51c4e7;
+}
+
+.colorDet-flying {
+    color: #3dc7ef;
+}
+
+.colorDet-ghost {
+    color: #4d5b64;
+}
+
+.colorDet-normal {
+    color: #a4acaf;
+}
+
+.colorDet-poison {
+    color: #7e0058;
+}
+
+.colorDet-rock {
+    color: #a38c21;
+}
+
+.colorDet-fighting {
+    color: #d56723;
+}
+
+.colorDet-dark {
+    color: #707070;
+}
+
+.colorDet-bug {
+    color: #729f3f;
+}
+
+.colorDet-dragon {
+    color: #f16e57;
+}
+
+.colorDet-electric {
+    color: #bba909;
+}
+
+.colorDet-fairy {
+    color: #fdb9e9;
+}
+
+.colorDet-shadow {
+    color: #7b62a3;
+}
+
+.colorDet-unknow {
+    color: #757575;
+}
+
+
+/* Botones de desplazamiento */
+.btn__detail-rigth,
+.btn__detail-left {
+    position: absolute;
+    top: 0.1em;
+    font-size: 7em;
+    border: none;
+    height: 0;
+    width: 0;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.63);
+    
+    &:hover {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        color: #dd1a1a63;
+        
+    }
+}
+
+.btn__detail-rigth {
+    right: 0.8em;
+    &:hover {
+        transform: scaleX(0.90);
+    }
+}
+
+.btn__detail-left {
+    left: -0.2em;
+    &:hover {
+        transform: scaleX(1.1);
+    }
+}

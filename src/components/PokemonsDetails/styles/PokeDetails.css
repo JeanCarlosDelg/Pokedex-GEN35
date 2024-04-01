@@ -1,0 +1,45 @@
+.det__container {
+    width: 100%;
+    margin: 0.2em 0;
+    padding: 5px;
+}
+
+.det__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.det__subcontainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.3em;
+}
+
+.det__name {
+    width: 125px;
+    text-transform: capitalize;
+    color: #484848;
+}
+
+.det__number {
+    width: 22px;
+    color: #484848;
+    justify-content: end;
+}
+
+.det__max {
+    color: #484848;
+}
+
+.det__progress-container {
+    width: 100%;
+}
+
+.det__progress {
+    margin: 0.3em 0;
+    width: 100%;
+    height: 2em;
+}

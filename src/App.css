@@ -1,0 +1,17 @@
+
+.app__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;max-width: 100vw;
+}
+
+button{
+    cursor: pointer;
+    
+    &:hover {
+        background-color: #db5555;
+        transform: scale(1.05);
+        color: #c5c2c2;
+        box-shadow: 1px 3px 5px rgba(3, 3, 3, 0.493);
+    }
+}

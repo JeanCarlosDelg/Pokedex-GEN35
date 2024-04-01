@@ -1,0 +1,29 @@
+.select__container {
+    width: 13em;
+    padding: 0.1em 0.5em;
+    font-size: 1.17em;
+    border-radius: 0.5em;
+    border: none;
+    border-top: 0.15em solid black;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.603);
+    font-weight: 600;
+}
+
+.select__type {
+
+    &:checked {
+        background-color: #DD1A1A;
+    }
+
+    &:active {
+        background-color: #DD1A1A;
+    }
+
+    &::selection {
+        background-color: #DD1A1A;
+    }
+
+    &:hover {
+        color: #DD1A1A;
+    }
+}

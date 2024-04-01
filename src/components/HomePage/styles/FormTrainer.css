@@ -1,0 +1,30 @@
+.form__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.15em;
+    width: 100%;
+    max-width: 500px;
+}
+
+.form__input {
+    width: 80%;
+    max-width: 13em;
+    padding: 0.4em 0.5em;
+    font-size: inherit;
+    border: 0.1em solid black;
+    border-radius: 10px 0 0 10px;
+    margin-left: 1em;
+}
+
+.form__btn {
+    width: 50%;
+    max-width: 4em;
+    padding: 0.4em 0;
+    font-size: inherit;
+    font-weight: 700;
+    background-color: #d93f3f;
+    border-radius: 0 10px 10px 0;
+    border: 0.1em solid black;
+    margin-right: 1em;
+}
