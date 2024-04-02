@@ -5,13 +5,14 @@ const useFetch = (url) => {
 
   const [response, setResponse] = useState()
 
-  const getApi = () => {
+  const getApi = (callback) => {
     axios.get(url)
       .then(res => setResponse(res.data))
       .catch(err => console.log(err))
+      .finally(callback)
   }
 
-  const getApiTypes = (urlType) => {
+  const getApiTypes = (urlType, callback) => {
     axios.get(urlType)
     .then(res => {
       const obj = {
@@ -20,6 +21,7 @@ const useFetch = (url) => {
       setResponse(obj)
     })
     .catch(err => console.log(err))
+    .finally(callback)
   }
 
   return [ response, getApi, getApiTypes ]

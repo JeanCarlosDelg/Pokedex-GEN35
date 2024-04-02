@@ -5,6 +5,8 @@ import ListPokemons from '../components/PokedexPage/ListPokemons'
 import SelectType from '../components/PokedexPage/SelectType'
 import './styles/PokedexPage.css'
 import Paginations from '../components/Paginacion/Paginations'
+import Loader from '../components/loading/Loader'
+import axios from 'axios'
 
 
 const PokedexPage = () => {
@@ -24,11 +26,10 @@ const PokedexPage = () => {
   
   useEffect(() => {
     if (typeSelected === 'All Pokemons') {
-      getPokemons()
-      setCurrentPage(1)
+      getPokemons(() => setLoading(false))
+      // setCurrentPage(1)
     } else {
-      getPokeByType(typeSelected)
-      setCurrentPage(1)
+      getPokeByType(typeSelected, () => setLoading(false))
     }
   }, [typeSelected])
   
@@ -36,15 +37,13 @@ const PokedexPage = () => {
   const handleSubmit = e => {
     e.preventDefault()
     setPokeSearch(inputSearch.current.value.trim().toLowerCase())
-
+    inputSearch.current.value = ''
     if (pokeSearch) {
       setCurrentPage(1)
     } 
-
-    inputSearch.current.valiue = ''
   }
   
-  
+
   const pokemonFiltered = pokemons?.results.filter(poke => {
     return poke.name.includes(pokeSearch)
   })
@@ -53,11 +52,20 @@ const PokedexPage = () => {
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage, setPostsPerPage] = useState(15)
   
+  const [maximo, setMaximo] = useState()
   
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
   const currentPosts = pokemonFiltered?.slice(indexOfFirstPost, indexOfLastPost)
-  const howManyPages = Math.ceil(pokemonFiltered?.length / postsPerPage)
+  
+  function howManyPages (poke) {
+    const resulMax = Math.ceil(poke?.length / postsPerPage)
+    setMaximo(resulMax)
+  }
+  
+  useEffect(() => {
+    howManyPages(pokemonFiltered)
+  }, [pokemonFiltered])
   
   
   return (
@@ -72,7 +80,11 @@ const PokedexPage = () => {
       <p className='pokedex__welcome'><span className='pokedex__span'>{`Welcome ${trainer},`}</span><span className='pokedex__span2'>here you can find your favorite pokemon</span></p>
       <div className='pokedex__sub-container'>
         <form className='pokedex__form' onSubmit={handleSubmit}>
-          <input className='pokedex__input' placeholder='Buscar Pokemon' ref={inputSearch} type="text" />
+          <input 
+            className='pokedex__input' 
+            placeholder='Buscar Pokemon' ref={inputSearch} 
+            type="text" 
+          />
           <button className='pokedex__btn'>Search</button>
         </form>
         <div className='pokedex_selectype'>
@@ -82,17 +94,26 @@ const PokedexPage = () => {
         </div>
       </div>
       <div className='pagination__container'>
-        <Paginations
-          howManyPages={howManyPages}
+        {
+          maximo &&
+          <Paginations
+          // howManyPages={howManyPages}
+          maximo={maximo}
           setCurrentPage={setCurrentPage}
           typeSelected={typeSelected}
           pokeSearch={pokeSearch}
         />
+        }
       </div>
-      <ListPokemons
-        currentPosts={currentPosts}
-        pokemonFiltered={pokemonFiltered}
-      />
+      {
+        loading
+          ? <Loader />
+          : <ListPokemons
+              currentPosts={currentPosts}
+              pokemonFiltered={pokemonFiltered}
+              loading={loading}
+            />
+      }
     </div>
   )
 }

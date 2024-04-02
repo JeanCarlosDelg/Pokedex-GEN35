@@ -7,10 +7,12 @@
     border-top: 0.15em solid black;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.603);
     font-weight: 600;
+    cursor: pointer;
 }
 
 .select__type {
-
+    cursor: pointer;
+    
     &:checked {
         background-color: #DD1A1A;
     }

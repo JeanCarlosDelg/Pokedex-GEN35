@@ -27,4 +27,12 @@
     border-radius: 0 10px 10px 0;
     border: 0.1em solid black;
     margin-right: 1em;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: #db5555;
+        transform: scale(1.05);
+        color: #c5c2c2;
+        box-shadow: 1px 3px 5px rgba(3, 3, 3, 0.493);
+    }
 }

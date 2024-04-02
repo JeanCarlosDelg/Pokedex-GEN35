@@ -3,13 +3,13 @@ import './styles/Paginations.css'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const Paginations = ({ howManyPages, setCurrentPage, pokeSearch, typeSelected }) => {
+const Paginations = ({ howManyPages, maximo, setCurrentPage, pokeSearch, typeSelected }) => {
 
   const [currentButton, setCurrentButton] = useState(1)
   const [arrOfCurrButtons, setArrOfCurrButtons] = useState([])
 
   const numberOfPage = []
-  for (let i = 1; i <= howManyPages; i++) {
+  for (let i = 1; i <= maximo; i++) {
     numberOfPage.push(i)
   }
 
@@ -95,7 +95,6 @@ const Paginations = ({ howManyPages, setCurrentPage, pokeSearch, typeSelected })
     else if (currentButton === dotsEnd) {
       setCurrentButton(arrOfCurrButtons[arrOfCurrButtons.length - 1])
     }
-
     setArrOfCurrButtons(tempNumberOfPages)
     setCurrentPage(currentButton)
   }, [currentButton])

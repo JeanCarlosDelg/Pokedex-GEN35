@@ -18,7 +18,7 @@ function App() {
           <Route path='/pokedex' element={<PokedexPage />} />
           <Route path='/pokedex/:id' element={<PokeDetailPage />} />
         </Route>
-          <Route path='/error' element={<ErrorLogin />} />
+        <Route path='/error' element={<ErrorLogin />} />
       </Routes>
     </div>
   )

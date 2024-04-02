@@ -9,7 +9,7 @@ const ProtectedRoutes = () => {
   if (trainer.length >= 3) {
     return <Outlet />
   } else {
-    return <Navigate to='/error' />
+    return <Navigate to={trainer ? '/error' : '/'} />
   }
 }
 

@@ -1,8 +1,10 @@
+
+import Loader from '../loading/Loader'
 import PokeCard from './PokeCard'
 import './style/ListPokemon.css'
 
 
-const ListPokemons = ({ currentPosts, pokemonFiltered }) => {
+const ListPokemons = ({ currentPosts, pokemonFiltered, loading }) => {
 
   const res1 = pokemonFiltered?.map(poke => poke.name)
   const res2 = currentPosts?.map(poke => poke.name)
@@ -22,8 +24,8 @@ const ListPokemons = ({ currentPosts, pokemonFiltered }) => {
             </div>
           ))
           : <div className='list__error'>
-              <h2 className='list__null'>😫 No se encontró ningun resultado ❌</h2>
-            </div>
+            <h2 className='list__null'>😫 No se encontró ningun resultado ❌</h2>
+          </div>
       }
     </div>
   )
