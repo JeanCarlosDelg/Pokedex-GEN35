@@ -3,13 +3,14 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1.5em;
-    padding: 0 2em;
+    padding: 0 0.5em;
     justify-content: center;
+    margin-bottom: 3em;
 }
 
 .list-poke__container {
     width: 100%;
-    max-width: 250px;
+    max-width: 200px;
 }
 
 .list__error {

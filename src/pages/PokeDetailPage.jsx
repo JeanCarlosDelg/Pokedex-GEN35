@@ -1,31 +1,40 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
 import PokeDetails from '../components/PokemonsDetails/PokeDetails'
 import './styles/PokeDetailPage.css'
 import * as FaIcons from 'react-icons/fa'
 
-const PokeDetailPage = ({ pokeTodos }) => {
+const PokeDetailPage = () => {
   
-  const { name } = useParams()
+  const { id } = useParams()
+
+  let numId = +id + 0
   
-  const url = `https://pokeapi.co/api/v2/pokemon/${name}`
+  const [pokeId, setPokeId] = useState(numId)
+  
+  const url = `https://pokeapi.co/api/v2/pokemon/${pokeId}`
   
   const [pokemon, getPokemon] = useFetch(url)
   
   useEffect(() => {
     getPokemon()
-  }, [name])
-
+  }, [pokeId])
+  
   const handleNextForOne = () => {
-    console.log('adelatar')
+    setPokeId(
+      pokeId === 1000
+        ? pokeId
+        : pokeId + 1)
   }
-
+  
   const handlePrevForOne = () => {
-    console.log('retroceder')
-  }
-
-
+    setPokeId(
+      pokeId === 1
+        ? pokeId
+        : pokeId - 1)
+  }  
+  
   return (
     <div className='pokeDet__container'>
       <div className='container__header-page'>
@@ -37,16 +46,14 @@ const PokeDetailPage = ({ pokeTodos }) => {
       </div>
       <div className={`pokeDet__subcontainer1 border-${pokemon?.types[0].type.name}`}>
         <button
-          className='btn__detail-left'
-          // className={`btn_pag ${currentButton === 1 ? 'disabled' : ''}`}
+          className={`btn__detail-left ${pokeId === 1 ? 'disabled-id' : 'actibled-left'}`}
           onClick={handlePrevForOne}
         >
           <FaIcons.FaAngleLeft />
         </button>
         <img className='pokeDet__img' src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
         <button
-          className='btn__detail-rigth'
-        // className={`btn_pag ${currentButton === numberOfPage.length ? 'disabled' : ''}`}
+          className={`btn__detail-rigth ${pokeId === 10 ? 'disabled' : 'actibled-rigth'}`}
         onClick={handleNextForOne}
         >
           <FaIcons.FaAngleRight />

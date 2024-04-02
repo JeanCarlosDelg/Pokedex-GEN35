@@ -16,7 +16,7 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route element={<ProtectedRoutes />}>
           <Route path='/pokedex' element={<PokedexPage />} />
-          <Route path='/pokedex/:name' element={<PokeDetailPage />} />
+          <Route path='/pokedex/:id' element={<PokeDetailPage />} />
         </Route>
           <Route path='/error' element={<ErrorLogin />} />
       </Routes>

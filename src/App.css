@@ -8,10 +8,16 @@
 button{
     cursor: pointer;
     
-    &:hover {
+    /* &:hover {
         background-color: #db5555;
         transform: scale(1.05);
         color: #c5c2c2;
         box-shadow: 1px 3px 5px rgba(3, 3, 3, 0.493);
-    }
+    } */
+}
+
+.container-loader {
+    display: flex;
+    justify-content: center;
+    margin: 200px 0;
 }

@@ -11,8 +11,10 @@ const PokeCard = ({ pokeInf }) => {
     getPokemon()
   }, [])
 
+  
   const getId = pokeInf.url.split('/')
   const URL_ESPECIES = `https://pokeapi.co/api/v2/pokemon-species/${getId[6]}`
+  
 
   const [especiePoke, getEspeciePoke] = useFetch(URL_ESPECIES)
 
@@ -23,7 +25,7 @@ const PokeCard = ({ pokeInf }) => {
   const navigate = useNavigate()
 
   const handlePokemonDetail = () => {
-    navigate(`/pokedex/${pokeInf.name}`)
+    navigate(`/pokedex/${getId[6]}`)
   }
 
   return (

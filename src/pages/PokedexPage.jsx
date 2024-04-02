@@ -12,6 +12,8 @@ const PokedexPage = () => {
   const [pokeSearch, setPokeSearch] = useState('')
   const [typeSelected, setTypeSelected] = useState('All Pokemons')
 
+  const [loading, setLoading] = useState(true)
+
   const inputSearch = useRef()
 
   const trainer = useSelector(state => state.trainer)
