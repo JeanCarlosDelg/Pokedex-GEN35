@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
 import PokeDetails from '../components/PokemonsDetails/PokeDetails'
 import './styles/PokeDetailPage.css'
@@ -10,6 +10,8 @@ const PokeDetailPage = () => {
   const { id } = useParams()
 
   let numId = +id + 0
+
+  const navigate = useNavigate()
   
   const [pokeId, setPokeId] = useState(numId)
   
@@ -33,13 +35,17 @@ const PokeDetailPage = () => {
       pokeId === 1
         ? pokeId
         : pokeId - 1)
+  }
+
+  const handleReturn = () => {
+    navigate('/pokedex')
   }  
   
   return (
     <div className='pokeDet__container'>
       <div className='container__header-page'>
         <div className='pokedex__red'></div>
-        <img className='pokedex__poke' src="/pokedex.png" alt="" />
+        <img onClick={handleReturn} className='pokedex__poke return' src="/pokedex.png" alt="" />
         <img className='pokedex__ball' src="/pokeball.png" alt="" />
         <div className='pokedex__circle'></div>
         <div className='pokedex__black'></div>

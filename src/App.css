@@ -12,10 +12,10 @@
 }
 
 .pokedex_audio {
-    position: absolute;
+    position: fixed;
     top: 1em;
     right: 1em;
-    z-index: 30;
+    z-index: 10;
     opacity: 50%;
     font-size: 0.5em;
 }
