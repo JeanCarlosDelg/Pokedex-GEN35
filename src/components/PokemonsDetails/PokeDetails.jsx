@@ -12,7 +12,7 @@ const PokeDetails = ({ sta }) => {
           </div>
         </div>
         <div className='det__progress-container'>
-          <progress className="det__progress" value={sta.base_stat} max={120}></progress>
+          <progress className="det__progress" value={sta.base_stat} max={150}></progress>
         </div>
       </div>
     </article>

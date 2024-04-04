@@ -3,13 +3,14 @@ import './styles/Paginations.css'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const Paginations = ({ howManyPages, maximo, setCurrentPage, pokeSearch, typeSelected }) => {
+const Paginations = ({ howManyPages, setCurrentPage, pokeSearch, typeSelected }) => {
 
   const [currentButton, setCurrentButton] = useState(1)
   const [arrOfCurrButtons, setArrOfCurrButtons] = useState([])
 
+  
   const numberOfPage = []
-  for (let i = 1; i <= maximo; i++) {
+  for (let i = 1; i <= howManyPages; i++) {
     numberOfPage.push(i)
   }
 
@@ -18,7 +19,7 @@ const Paginations = ({ howManyPages, maximo, setCurrentPage, pokeSearch, typeSel
       setCurrentButton(1)
     }
   }, [typeSelected])
-
+  
   useEffect(() => {
     if (!pokeSearch) {
       setCurrentButton(1)
@@ -97,7 +98,7 @@ const Paginations = ({ howManyPages, maximo, setCurrentPage, pokeSearch, typeSel
     }
     setArrOfCurrButtons(tempNumberOfPages)
     setCurrentPage(currentButton)
-  }, [currentButton])
+  }, [currentButton, howManyPages])
 
   return (
     <div className="pagination-container">

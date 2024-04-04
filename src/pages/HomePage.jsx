@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import FormTrainer from '../components/HomePage/FormTrainer'
 import './styles/HomePage.css'
 
 const HomePage = () => {
+
+
   return (
     <div className='home__container'>
       <img className='home__img' src="/pokedex.png" alt="" />

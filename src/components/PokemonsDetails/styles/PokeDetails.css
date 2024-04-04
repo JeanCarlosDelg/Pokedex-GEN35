@@ -39,7 +39,12 @@
 }
 
 .det__progress {
+    -webkit-appearance: none;
     margin: 0.3em 0;
     width: 100%;
     height: 2em;
+    
+    &::-webkit-progress-value {
+        background-color: #ec4848f8;
+      }
 }
